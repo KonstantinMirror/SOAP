@@ -7,6 +7,7 @@
           <element id="module-output" name="SOAP" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.38" />
           <element id="library" level="project" name="Maven: com.sun.xml.ws:jaxws-rt:2.2.8" />
           <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.2.7" />
           <element id="library" level="project" name="Maven: javax.xml.ws:jaxws-api:2.2.9" />

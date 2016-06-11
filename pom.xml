@@ -21,7 +21,14 @@
 
     <dependencies>
 
-        <!-- jax-ws runtime from sun -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.38</version>
+        </dependency>
+
+
+
         <dependency>
             <groupId>com.sun.xml.ws</groupId>
             <artifactId>jaxws-rt</artifactId>
@@ -29,7 +36,7 @@
             <scope>${jaxws.scope}</scope>
         </dependency>
 
-        <!-- jax-ws runtime from glassfish Metro - project tango -->
+
         <dependency>
             <groupId>org.glassfish.metro</groupId>
             <artifactId>webservices-rt</artifactId>
@@ -56,7 +63,7 @@
                </executions>
                <configuration>
                    <keep>true</keep>
-                   <sei>com.jaxws.series.bottom.up.approach.service.BookServiceImpl</sei>
+                   <sei>com.datalex.services.CustomerService</sei>
                    <genWsdl>true</genWsdl>
                    <resourceDestDir>${basedir}\generated\resources\wsdl</resourceDestDir>
                    <sourceDestDir>${basedir}\generated\java\source</sourceDestDir>

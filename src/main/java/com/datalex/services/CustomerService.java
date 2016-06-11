@@ -1,43 +1,53 @@
-package com.datalex.customerservice;
+package com.datalex.services;
 
+import com.datalex.dao.db.FabricDao;
 import com.datalex.entity.Customer;
 import com.datalex.entity.Customers;
 import com.datalex.dao.ICustomerDAO;
-import com.datalex.dao.db.DbDao;
 
+import javax.jws.WebService;
 
-public class CustomerService {
+@WebService(serviceName = "CustomerService",
+        endpointInterface = "com.datalex.services.ICustomerService",
+        portName ="CustomerServicePort" )
+public class CustomerService implements ICustomerService {
+
     ICustomerDAO customerDAO;
 
     public CustomerService() {
-        customerDAO = new DbDao();
+        customerDAO = FabricDao.getInstance();
     }
 
 
+    @Override
     public Customers getCustomers(){
        Customers customers = customerDAO.getAllCustomers();
         return customers;
     }
 
 
+    @Override
     public Customer getCustomerById(Long customerId){
         Customer customer = customerDAO.getCustomerById(customerId);
         return customer;
     }
 
 
+    @Override
     public void deleteCustomer(Long customerId){
         customerDAO.deleteCustomer(customerId);
         return;
     }
 
-    public Customer updateCustomer( Long customerId,Customer customer){
+    @Override
+    public Customer updateCustomer(Long customerId, Customer customer){
         customer.setID(customerId);
         customerDAO.updateCustomerById(customer);
         return customer;
     }
 
 
+    @Override
     public Customer createCustomer(Customer customer){
         customer = customerDAO.createCustomer(customer);
        return customer;
