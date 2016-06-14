@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://services.datalex.com/" xmlns:tns="http://services.datalex.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="com.datalex.entity">
+
+  <xs:import namespace="com.datalex.entity" schemaLocation="CustomerService_schema2.xsd"/>
+
+  <xs:element name="createCustomer" type="tns:createCustomer"/>
+
+  <xs:element name="createCustomerResponse" type="tns:createCustomerResponse"/>
+
+  <xs:element name="deleteCustomer" type="tns:deleteCustomer"/>
+
+  <xs:element name="deleteCustomerResponse" type="tns:deleteCustomerResponse"/>
+
+  <xs:element name="getCustomerById" type="tns:getCustomerById"/>
+
+  <xs:element name="getCustomerByIdResponse" type="tns:getCustomerByIdResponse"/>
+
+  <xs:element name="getCustomers" type="tns:getCustomers"/>
+
+  <xs:element name="getCustomersResponse" type="tns:getCustomersResponse"/>
+
+  <xs:element name="updateCustomer" type="tns:updateCustomer"/>
+
+  <xs:element name="updateCustomerResponse" type="tns:updateCustomerResponse"/>
+
+  <xs:complexType name="getCustomerById">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerByIdResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:customer" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="customer">
+    <xs:sequence>
+      <xs:element name="email" type="xs:string" minOccurs="0"/>
+      <xs:element name="ID" type="xs:long" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="phone" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomers">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomersResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:customers" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="customers">
+    <xs:sequence>
+      <xs:element name="customerList" type="tns:customer" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createCustomer">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:customer" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createCustomerResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:customer" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteCustomer">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteCustomerResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="updateCustomer">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:long" minOccurs="0"/>
+      <xs:element name="arg1" type="tns:customer" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateCustomerResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:customer" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

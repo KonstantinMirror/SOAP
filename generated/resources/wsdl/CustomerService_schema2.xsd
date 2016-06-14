@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="com.datalex.entity" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://services.datalex.com/">
+
+  <xs:import namespace="http://services.datalex.com/" schemaLocation="CustomerService_schema1.xsd"/>
+
+  <xs:element name="customer" type="ns1:customer"/>
+
+  <xs:element name="customers" type="ns1:customers"/>
+
+
+</xs:schema>
+

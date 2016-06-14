@@ -12,7 +12,7 @@
     <properties>
         <sun.jaxws.version>2.2.8</sun.jaxws.version>
         <metro.jaxws.version>2.3</metro.jaxws.version>
-        <jaxws.scope>compile</jaxws.scope> <!-- provided(weblogic) / compile(tomcat) -->
+        <jaxws.scope>provided</jaxws.scope> <!-- provided(weblogic) / compile(tomcat) -->
         <compileSource>1.7</compileSource>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
