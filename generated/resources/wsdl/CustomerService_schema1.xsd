@@ -25,7 +25,7 @@
 
   <xs:complexType name="getCustomerById">
     <xs:sequence>
-      <xs:element name="arg0" type="xs:long" minOccurs="0"/>
+      <xs:element name="arg0" type="xs:long"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -62,7 +62,7 @@
 
   <xs:complexType name="createCustomer">
     <xs:sequence>
-      <xs:element name="arg0" type="tns:customer" minOccurs="0"/>
+      <xs:element name="arg0" type="tns:customer" />
     </xs:sequence>
   </xs:complexType>
 
@@ -74,7 +74,7 @@
 
   <xs:complexType name="deleteCustomer">
     <xs:sequence>
-      <xs:element name="arg0" type="xs:long" minOccurs="0"/>
+      <xs:element name="arg0" type="xs:long"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -84,8 +84,8 @@
 
   <xs:complexType name="updateCustomer">
     <xs:sequence>
-      <xs:element name="arg0" type="xs:long" minOccurs="0"/>
-      <xs:element name="arg1" type="tns:customer" minOccurs="0"/>
+      <xs:element name="arg0" type="xs:long"/>
+      <xs:element name="arg1" type="tns:customer"/>
     </xs:sequence>
   </xs:complexType>
 

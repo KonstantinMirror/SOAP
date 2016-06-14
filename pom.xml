@@ -46,7 +46,7 @@
 
     </dependencies>
 
-   <build>
+  <!-- <build>
        <plugins>
            <plugin>
                <groupId>org.jvnet.jax-ws-commons</groupId>
@@ -72,7 +72,7 @@
                </configuration>
            </plugin>
        </plugins>
-   </build>
+   </build>-->
 
 
 </project>

@@ -5,7 +5,9 @@ import com.datalex.entity.Customer;
 import com.datalex.entity.Customers;
 import com.datalex.dao.ICustomerDAO;
 
+import javax.jws.WebParam;
 import javax.jws.WebService;
+import static javax.jws.WebParam.Mode.*;
 
 @WebService(serviceName = "CustomerService",
         endpointInterface = "com.datalex.services.ICustomerService",
@@ -27,20 +29,21 @@ public class CustomerService implements ICustomerService {
 
 
     @Override
-    public Customer getCustomerById(Long customerId){
+    public Customer getCustomerById(@WebParam(name = "id-user", mode = IN)Long customerId){
         Customer customer = customerDAO.getCustomerById(customerId);
         return customer;
     }
 
 
     @Override
-    public void deleteCustomer(Long customerId){
+    public void deleteCustomer(@WebParam(name = "id-user", mode = IN)Long customerId){
         customerDAO.deleteCustomer(customerId);
         return;
     }
 
     @Override
-    public Customer updateCustomer(Long customerId, Customer customer){
+    public Customer updateCustomer(@WebParam(name = "id-user", mode = IN)Long customerId,
+                                   Customer customer){
         customer.setID(customerId);
         customerDAO.updateCustomerById(customer);
         return customer;
