@@ -1,9 +1,10 @@
 package com.datalex.dao.db;
 
 
-import com.datalex.entity.Customer;
-import com.datalex.entity.Customers;
+
 import com.datalex.dao.ICustomerDAO;
+import com.datalex.services.Customer;
+import com.datalex.services.Customers;
 
 import java.sql.*;
 
